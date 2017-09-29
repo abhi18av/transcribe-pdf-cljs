@@ -4,8 +4,11 @@
 
   :min-lein-version "2.7.1"
 
-  :dependencies [[org.clojure/clojure "1.8.0"]
-                 [org.clojure/clojurescript "1.9.908"]]
+;  :dependencies [[org.clojure/clojure "1.8.0"]
+;                 [org.clojure/clojurescript "1.9.908"]]
+
+  :dependencies [[org.clojure/clojure "1.9.0-beta1"]
+                 [org.clojure/clojurescript "1.9.908" :scope "provided"]]
 
   :plugins [[lein-cljsbuild "1.1.7" :exclusions [[org.clojure/clojure]]]
             [lein-figwheel "0.5.13"]]
@@ -22,7 +25,7 @@
               :compiler {
                 :main transcribe-pdf-cljs.core
                 :asset-path "target/js/compiled/dev"
-                :output-to "target/js/compiled/transcribe_pdf_cljs.js"
+                :output-to "target/js/compiled/transcribe_pdf_cljs_dev.js"
                 :output-dir "target/js/compiled/dev"
                 :target :nodejs
                 :optimizations :none
@@ -30,7 +33,7 @@
              {:id "prod"
               :source-paths ["src"]
               :compiler {
-                :output-to "server.js"
+                :output-to "target/js/compiled/transcribe_pdf_cljs_prod.js"
                 :output-dir "target/js/compiled/prod"
                 :target :nodejs
                 :optimizations :simple}}]}
