@@ -28,6 +28,9 @@
                 :output-to "target/js/compiled/transcribe_pdf_cljs_dev.js"
                 :output-dir "target/js/compiled/dev"
                 :target :nodejs
+                :npm-deps {"chalk" "2.1.0"
+                           "robotjs" "0.4.7"}
+                :install-deps true
                 :optimizations :none
                 :source-map-timestamp true}}
              {:id "prod"
